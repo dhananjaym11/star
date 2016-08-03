@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<title>Circle</title>
+<head>
+<style type="text/css">
+    *{padding: 0px; margin: 0px; box-sizing: border-box;}
+    .container {
+        margin: 20px;
+        width: 100px;
+        height: 100px;
+        position: relative;
+    }
+    .container img{ 
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 70px;
+    }
+</style>
+</head>
+<body>
+    <div class="wrapper">
+    	<div id="container1" class="container" data-value=".3">
+            <img src="service-search.png">
+        </div>
+        <div id="container2" class="container" data-value=".9">
+            <img src="service-search.png">
+        </div>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script src="progressbar.min.js"></script>
+    <script type="text/javascript">
+    var bar1 = new ProgressBar.Circle(container1, {
+      strokeWidth: 6,
+      easing: 'easeInOut',
+      duration: 1400,
+      color: '#FFEA82',
+      trailColor: '#eee',
+      trailWidth: 1,
+      svgStyle: null
+    });
+    bar1.animate($('#container1').attr('data-value'));  // Number from 0.0 to 1.0
+
+    var bar2 = new ProgressBar.Circle(container2, {
+      strokeWidth: 6,
+      easing: 'easeInOut',
+      duration: 1400,
+      color: '#ED6A5A',
+      trailColor: '#eee',
+      trailWidth: 1,
+      svgStyle: null
+    });
+    bar2.animate($('#container2').attr('data-value'));  // Number from 0.0 to 1.0
+
+    </script>
+</body>
+</html>
